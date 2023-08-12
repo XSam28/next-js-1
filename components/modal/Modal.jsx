@@ -33,7 +33,7 @@ export default function Page(props) {
               <h2 className="text-base font-semibold leading-6 text-gray-900" id="slide-over-title">Top Stories</h2>
             </div>
             <div className="relative mt-6 flex-1 px-4 sm:px-6">
-            {dataImage.mas(data=>(
+            {dataImage.map(data=>(
               <div className="relative mb-6 aspect-[4/3] overflow-hidden group rounded-xl" key={data.id}>
                 <div className="transition-all duration-500 bg-gradient-to-t from-black absolute bottom-0 z-10 w-full h-full rounded-xl invisible group-hover:visible group-hover:scale-[1.01] translate-y-96 group-hover:translate-y-0"></div>
                 <Image className="transition-all duration-500 rounded-xl group-hover:scale-[1.01] shadow-2xl object-cover select-none" src={data.image} alt="Stories" fill/>
