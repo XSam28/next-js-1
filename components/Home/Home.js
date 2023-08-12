@@ -65,7 +65,7 @@ export default function PageHome() {
   //   return () => clearInterval(interval);
   // }, []);
   return (
-    <div className='absolute bg-cover -z-10 top-0'>
+    <div className='absolute bg-cover -z-10 top-0 select-none'>
         <Image
         className='object-cover w-[100vw] h-[100vh]'
         src={dataImage[currentSlide].image}

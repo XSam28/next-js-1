@@ -1,7 +1,9 @@
 "use client"
-import Konten from "public/rocket.jpg"
 import Image from "next/image"
-import '@/app/globals.css'
+import { dataImage } from "./DataImg"
+import Link from "next/link"
+import { SiNasa } from 'react-icons/si';
+
 
 export default function Page(props) {
   return (
@@ -10,8 +12,8 @@ export default function Page(props) {
 <div className="fixed inset-0 bg-black/50 bg-opacity-75 transition-opacity">
 </div>
 
-  <div className="fixed inset-0 overflow-hidden">
-    <div className="absolute inset-0 overflow-hidden">
+  <div className="fixed inset-0 overflow-s">
+    <div className="absolute inset-0 overflow-s">
       <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
 
         <div className="pointer-events-auto relative w-screen sm:max-w-2xl max-w-md">
@@ -26,16 +28,31 @@ export default function Page(props) {
             </button>
           </div>
 
-          <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+          <div className="flex h-full overflow-x-hidden flex-col overflow-y-scroll bg-white py-6 shadow-xl">
             <div className="px-4 sm:px-6">
-              <h2 className="text-base font-semibold leading-6 text-gray-900" id="slide-over-title">Latest News</h2>
+              <h2 className="text-base font-semibold leading-6 text-gray-900" id="slide-over-title">Top Stories</h2>
             </div>
             <div className="relative mt-6 flex-1 px-4 sm:px-6">
-              <div className="news">
-                <Image className="Image" src={Konten} alt="roketajg"/>
-                <p>Lorem, ipsum.</p>
+            {dataImage.mas(data=>(
+              <div className="relative mb-6 aspect-[4/3] overflow-hidden group rounded-xl" key={data.id}>
+                <div className="transition-all duration-500 bg-gradient-to-t from-black absolute bottom-0 z-10 w-full h-full rounded-xl invisible group-hover:visible group-hover:scale-[1.01] translate-y-96 group-hover:translate-y-0"></div>
+                <Image className="transition-all duration-500 rounded-xl group-hover:scale-[1.01] shadow-2xl object-cover select-none" src={data.image} alt="Stories" fill/>
+                <div className="transition-all duration-500 mt-6 absolute bottom-0 z-20 p-10 text-white group-hover:scale-110 delay-200">
+                <p className="text-4xl font-extrabold translate-y-14 group-hover:translate-y-0 duration-500 group-hover:bg-white group-hover:text-black text-center">{data.title}</p>
+                <div className="text-xs invisible group-hover:visible translate-y-96 group-hover:translate-y-0 duration-500">
+                <p>{data.desc}</p>
+                <Link target="_blank" className="hover:underline text-slate-400" href={data.url}>{data.read}</Link>
+                </div>
+                </div>
               </div>
+              ))}
             </div>
+
+              <div className="w-full flex justify-center items-center gap-2 flex-row">
+              <p className="font-extralight text-xs tracking-wide text-slate-600 select-none">source:</p>
+              <Link href={'https://www.nasa.gov/'}><SiNasa color="black" size="50"/></Link>
+              </div>
+
           </div>
         </div>
       </div>

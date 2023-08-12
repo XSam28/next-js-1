@@ -24,15 +24,3 @@ html::-webkit-scrollbar-thumb:active {
   }
 @tailwind components;
 @tailwind utilities;
-
-@layer components{
-.news {
-@apply relative mb-6
-}
-.news p{
-@apply mt-6 font-extrabold absolute bottom-0 z-10 p-10 text-white text-4xl
-}
-.news .Image{
-@apply rounded-xl hover:scale-[1.01] duration-500 shadow-2xl
-}
-}
