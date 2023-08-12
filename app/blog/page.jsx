@@ -4,6 +4,7 @@ import Yung from "@/public/youngfly.jpg"
 import { Readex_Pro, Roboto } from 'next/font/google'
 import Link from "next/link";
 import dataSpace from "@/app/libs/getSpace"
+import { Suspense } from "react";
 
 const inter = Roboto({
   subsets: ["latin"],
@@ -17,7 +18,7 @@ const ligth = Readex_Pro({
 export default async function Products() {
 const data = await dataSpace()
   return (
-    <div className='w-full h-[1000vh] bg-white'>
+    <div className='w-full h-[1000vh] bg-white select-none'>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 p-8 gap-3">
 
       {/* <div className="relative group">
@@ -52,9 +53,11 @@ const data = await dataSpace()
       {data.map(gambar=>(
         <div key={gambar.date}>
           <Link href={`/blog/${gambar.date}`}>
+            <Suspense fallback={<p className="text-black text-xl bg-slate-700">Loading..</p>}>
             <div className="aspect-[1.5] overflow-hidden rounded-md">
           <Image className="w-full h-full object-cover hover:scale-125 transition-all duration-500" src={gambar.url} alt="Sorry...can't render image" width={600} height={400}/>
           </div>
+          </Suspense>
           <div className="mt-3">
           <p className="text-lg selection:text-white">{gambar.title}</p>
           <p className="text-sm text-slate-600 selection:text-white">{gambar.date}</p>

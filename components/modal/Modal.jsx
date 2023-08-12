@@ -4,7 +4,6 @@ import { dataImage } from "./DataImg"
 import Link from "next/link"
 import { SiNasa } from 'react-icons/si';
 
-
 export default function Page(props) {
   return (
     <div className="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
@@ -30,15 +29,16 @@ export default function Page(props) {
 
           <div className="flex h-full overflow-x-hidden flex-col overflow-y-scroll bg-white py-6 shadow-xl">
             <div className="px-4 sm:px-6">
-              <h2 className="text-base font-semibold leading-6 text-gray-900" id="slide-over-title">Top Stories</h2>
+              <h2 className="font-semibold leading-9 text-gray-900 text-3xl" id="slide-over-title">Top Stories</h2>
+              <p className="text-xs text-black/30">*hover to see short description</p>
             </div>
             <div className="relative mt-6 flex-1 px-4 sm:px-6">
             {dataImage.map(data=>(
               <div className="relative mb-6 aspect-[4/3] overflow-hidden group rounded-xl" key={data.id}>
                 <div className="transition-all duration-500 bg-gradient-to-t from-black absolute bottom-0 z-10 w-full h-full rounded-xl invisible group-hover:visible group-hover:scale-[1.01] translate-y-96 group-hover:translate-y-0"></div>
-                <Image className="transition-all duration-500 rounded-xl group-hover:scale-[1.01] shadow-2xl object-cover select-none" src={data.image} alt="Stories" fill/>
+                <Image className="transition-all duration-500 rounded-xl group-hover:scale-[1.01] shadow-2xl object-cover select-none" src={data.image} alt="Stories" quality={30} fill/>
                 <div className="transition-all duration-500 mt-6 absolute bottom-0 z-20 p-10 text-white group-hover:scale-110 delay-200">
-                <p className="text-4xl font-extrabold translate-y-14 group-hover:translate-y-0 duration-500 group-hover:bg-white group-hover:text-black text-center">{data.title}</p>
+                <p className="text-sm sm:text-xl lg:text-4xl font-extrabold -translate-y-5 md:-translate-y-60 group-hover:translate-y-0 duration-500 group-hover:bg-white group-hover:text-black text-center">{data.title}</p>
                 <div className="text-xs invisible group-hover:visible translate-y-96 group-hover:translate-y-0 duration-500">
                 <p>{data.desc}</p>
                 <Link target="_blank" className="hover:underline text-slate-400" href={data.url}>{data.read}</Link>

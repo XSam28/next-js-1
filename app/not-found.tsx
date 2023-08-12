@@ -1,12 +1,13 @@
 import Link from 'next/link'
+import { TbError404 } from 'react-icons/tb';
  
 export default function NotFound() {
   return (
-    <div>
+    <div className='flex justify-center items-center w-[100bw] h-[80vh] flex-col text-white'>
       <h2>Not Found</h2>
-      <p>Could not find requested resource</p>
+      <TbError404 color='white' size='100'/>
       <p>
-        View <Link href="/blog">all posts</Link>
+        Back to  <Link className='hover:underline' href="/">HomePage</Link>
       </p>
     </div>
   )
