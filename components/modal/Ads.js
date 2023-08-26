@@ -19,6 +19,7 @@ export default function Ads() {
       <Image
       src={vid}
       className="lg:w-[50vw] m-auto"
+      alt="wh"
       />
     </div>
     </>

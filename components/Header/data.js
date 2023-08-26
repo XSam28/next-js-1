@@ -11,8 +11,13 @@ export const link = [
     },
     {
       id:3,
-      title: "PROJECTS",
-      url: "/projects"
+      title: "MISSION",
+      url: "/mission"
+    },
+    {
+      id:4,
+      title: "CONTACT",
+      url: "/contact"
     }
   ]
   

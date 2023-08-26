@@ -8,9 +8,23 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'parallax': "url('/nebula.jpg')",
+        'hue': "url('/hue.jpg')",
+      },
+      dropShadow: {
+        'wad': "3px 3px 5px black",
+        'low': "1px 1px 2px black",
+        'lbgt': "0px 0px 10px orange"
+      },
+      keyframes: {
+        prom:{
+          '0%, 100%': { filter: 'hue-rotate(-360deg)' },
+          '50%': { filter: 'hue-rotate(360deg)' }
+        }
+      },
+      animation:{
+        'rotation': "hue 10s infinite alternate",
+        'prom': "prom 10s infinite"
       },
     },
   },

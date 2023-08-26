@@ -1,5 +1,6 @@
 import getUsers from '@/app/libs/getUsers'
 import getUserPost from "@/app/libs/getUserPost"
+import { Suspense } from 'react'
 
 export default async function page({params: {id}}) {
   //inisialisasi both request in parallel
@@ -12,9 +13,11 @@ export default async function page({params: {id}}) {
     <div>
       <h1 className='text-white'>User Information</h1>
       <p>{user.name}</p>
+      <Suspense fallback={<p className='text-5xl text-white'>Loadd</p>}>
       {post.map(poost=>(
         <p className='text-white' key={poost.id}>{poost.body}</p>
       ))}
+      </Suspense>
     </div>
   )
 }

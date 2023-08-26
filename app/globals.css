@@ -24,3 +24,9 @@ html::-webkit-scrollbar-thumb:active {
   }
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .form {
+    @apply rounded-md p-5 text-black/70 focus:outline-8 focus:outline-none focus:drop-shadow-xl tracking-wider font-serif font-light focus:rounded-none transition-all duration-500 bg-zinc-100 selection:text-white
+  }
+}

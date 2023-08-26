@@ -1,12 +1,6 @@
 'use client'
 import { RxReload } from 'react-icons/rx';
-import { useRouter } from 'next/navigation';
- 
 export default function GlobalError({ error, reset }) {
-  const router = useRouter();
-  const handleRefresh = () => {
-    router.reload();
-  };
   return (
     <html>
       <body>
