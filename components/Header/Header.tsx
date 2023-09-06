@@ -19,11 +19,6 @@ export default function Header() {
     setOpen(!open)
   }
 
-  const [search, setSearch] = useState(false)
-  const openSearch = () => {
-    setSearch(!search)
-  }
-
   const pathname = usePathname()
 
   

@@ -1,31 +1,19 @@
-import { NextRequest, NextResponse } from "next/server";
-const fs = require('fs');
-const path = require('path');
-export async function POST(request:NextRequest) {
-  const data = await request.json();
+import { NextResponse } from "next/server";
+import {PrismaClient} from "@prisma/client";
 
-  const filePath = path.resolve(process.cwd(), "app/data/submission.json");
+const prisma = new PrismaClient();
 
-  let submission : any = [];
+export async function POST(req:Request){
+  const { name, email, message } = await req.json()
 
-  try {
-    const data = fs.readFileSync(filePath, 'utf8')
-    submission = JSON.parse(data)
-  } catch(error){
-    console.error("Error reading file", error);
-  }
-
-  submission.push(data)
-  try {
-    const newData =  JSON.stringify(submission, null, 2)
-    fs.writeFileSync(filePath, newData, "utf8")
-  } catch(error) {
-    console.error("Error writing data", error)
-  }
-
-  return NextResponse.json({
-    data: data,
-    message: "This message has been successfully sent"
-  })
+  const user = await prisma.user.create({
+    data: {
+      name,
+      email,
+      message
+    },
+  });
+  
+    return NextResponse.json({message: "successfull sent", user})
 
 }

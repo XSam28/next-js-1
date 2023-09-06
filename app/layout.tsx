@@ -1,5 +1,5 @@
 import './globals.css'
-import { Suspense } from 'react'
+import { ReactNode, Suspense } from 'react'
 import Loading from './loading'
 import Header from '@/components/Header/Header'
 import Footer from '@/components/Footer/Footer'
@@ -16,16 +16,17 @@ export const metadata = {
   description: 'Look Up',
 }
 
-export default function RootLayout({children}) 
+export default function RootLayout(props: {children: React.ReactNode, modal: React.ReactNode}) 
 {
   return (
     <html lang="en" className={inter.className}>
       <body className='bg-black selection:bg-black'>
         <div
         className='min-h-[100vh] flex flex-col justify-between'>
-          <div><Toaster/></div>
         <Header />
-      {children}
+        <div><Toaster/></div>
+      {props.children}
+      {props.modal}
       <Suspense fallback={ <Loading /> }></Suspense>
       <Footer/>
       </div>

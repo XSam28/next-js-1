@@ -10,7 +10,7 @@ const inter = Montserrat({
   weight: ['600']
 });
 
-export default function Page(props) {
+export default function Modal(props) {
   return (
     <div className="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
 

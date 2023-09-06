@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/just/Modal.js", "app/just/page.js", "components/modal/Ads.js", "components/modal/Modal.jsx", "components/Home/Home.js", "components/Header/data.js", "app/blog/page.jsx", "app/projects/page.js", "app/projects/[id]/page.jsx", "app/blog/[date]/page.jsx", "components/Header/Header.tsx", "app/layout.jsx", "app/contact/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/just/Modal.js", "app/just/page.js", "components/modal/Ads.js", "components/modal/Modal.jsx", "components/Home/Home.js", "components/Header/data.js", "app/blog/page.jsx", "app/projects/page.js", "app/projects/[id]/page.jsx", "app/blog/[date]/page.jsx", "components/Header/Header.tsx", "app/layout.tsx", "app/contact/contact.jsx"],
   "exclude": ["node_modules"]
 }
