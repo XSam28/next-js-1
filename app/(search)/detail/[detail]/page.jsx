@@ -10,7 +10,8 @@ const Search = async (detail) => {
 export default async function DetailResults({ params: { detail } }) {
   const details = await Search(detail);
   return (
-    <div className="w-screen min-h-[83vh] border-y border-slate-500 ">
+    <div className="w-full min-h-[83vh] border-y border-slate-500 ">
+      <Back />
       <div className="grid grid-cols-4">
         {details.collection.items.map((items) => (
           <>
@@ -26,10 +27,6 @@ export default async function DetailResults({ params: { detail } }) {
             ))}
           </>
         ))}
-      </div>
-      <div className="w-full flex items-center justify-center group">
-        <Back />
-        <p className="invisible group-hover:visible text-white">back</p>
       </div>
     </div>
   );

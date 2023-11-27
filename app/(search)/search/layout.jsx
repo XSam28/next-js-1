@@ -1,16 +1,16 @@
-import Search from "./Search"
+import Search from "./Search";
 
 export const metadata = {
-    title: "Search"
-}
+  title: "Search",
+};
 
-export default function RootLayout({children}) {
+export default function RootLayout({ children }) {
   return (
-    <main className='flex flex-col bg-white py-10 selection:text-white'>
-        <div className="w-[100vw] min-h-[75vh]">
-            <Search />
-            <div>{children}</div>
-        </div>
+    <main className="flex flex-col bg-white py-10 selection:text-white overflow-hidden">
+      <div className="w-screen overflow-hidden min-h-[75vh]">
+        <Search />
+        <div>{children}</div>
+      </div>
     </main>
-  )
+  );
 }
