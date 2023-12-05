@@ -53,16 +53,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Next.js",
     description: "The React Framework for the Web",
-    url: "https://nextjs.org",
+    url: "https://www.pemudaremajagkbi.site",
     siteName: "Next.js",
     images: [
       {
-        url: "/opengraph-image.gif",
+        url: "/Practicing_Our_Moonwalk.jpg",
         width: 800,
         height: 600,
       },
       {
-        url: "/opengraph-image.gif",
+        url: "/Practicing_Our_Moonwalk.jpg",
         width: 1800,
         height: 1600,
         alt: "My custom alt",
@@ -73,9 +73,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: "SPACE.",
-    card: "summary_large_image",
     description: "First Project",
-    images: "/twitter-image.gif",
+    card: "summary_large_image",
+    images: "/Practicing_Our_Moonwalk.jpg",
+    site: "https://www.pemudaremajagkbi.site",
   },
   category: "blog",
 };
