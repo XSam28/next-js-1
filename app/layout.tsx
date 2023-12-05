@@ -21,7 +21,10 @@ export const metadata: Metadata = {
   applicationName: "Next.js",
   referrer: "origin-when-cross-origin",
   keywords: ["Space", "spacex", "nasa", "moon"],
-  authors: [{ name: "Sam" }, { name: "Josh", url: "https://nextjs.org" }],
+  authors: [
+    { name: "Sam" },
+    { name: "Josh", url: "https://www.pemudaremajagkbi.site" },
+  ],
   creator: "sAm",
   publisher: "sAm",
   formatDetection: {
@@ -51,10 +54,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Next.js",
-    description: "The React Framework for the Web",
+    title: "SPACE.BLOG",
+    description: "SPACEBLOG",
     url: "https://www.pemudaremajagkbi.site",
-    siteName: "Next.js",
+    siteName: "SPACE.BLOG",
     images: [
       {
         url: "/Practicing_Our_Moonwalk.jpg",
@@ -72,7 +75,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    title: "SPACE.",
+    title: "SPACE.BLOG",
     description: "First Project",
     card: "summary_large_image",
     images: "/Practicing_Our_Moonwalk.jpg",
